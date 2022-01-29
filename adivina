@@ -1,0 +1,49 @@
+
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+    int numero;
+    int dato;
+    int contador = 0; 
+    int  jugar ;
+
+    srand(time(NULL)); 
+
+    dato = 1 + rand() % (100);
+
+    do {
+        do {
+            cout << "Digete un numero: "; 
+            cin >> numero;
+
+            if (numero > dato) {
+                cout << "Digita un numero menor \n";
+
+            }
+            else if (numero < dato ) {
+                cout << "Digita un numero mayor \n";
+            }
+            contador ++ ;
+        } while (numero != dato);  
+
+
+        cout << "Felicidades adivinaste el numero";
+        cout << "Numero de intentos " << contador << endl;
+        
+        cout << "Quieres volver a jugar ?  1: si o 2: no ";
+        cin >> jugar;
+
+    } while(jugar ==1);
+
+    cout << "Fin del juego " << endl;
+
+    system("pause"); 
+    return 0;
+     
+
+}
